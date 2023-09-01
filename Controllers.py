@@ -8,9 +8,9 @@ import random
 import win32api, win32con
 
 time.sleep(2);
-#monitor [wcoord, acoord, scoord, dcoord, 1coord, 2coord, 3coord, 4coord, 5coord]
-#firmonitor = []
-secmonitor = [(-1200, 660), (-1290, 720), (-1200, 780), (-1110, 720), (-350, 790), (-350, 690), (-300, 590), (-210, 520), (-70, 470)]
+#monitor [wcoord, acoord, scoord, dcoord, 1coord, 2coord, 3coord, 4coord, 5coord, aacoord, combcoord, halflifecoord]
+firmonitor = [(230, 700), (110, 790), (230, 870), (350, 780), (1430, 900), (1430, 750), (1500, 620), (1630, 500), (1820, 440), (1730, 850), (1400, 200), (600, 120)]
+#secmonitor = [(-1200, 660), (-1290, 720), (-1200, 780), (-1110, 720), (-350, 790), (-350, 690), (-300, 590), (-210, 520), (-70, 470)]
 
 def click(x, press):
     win32api.SetCursorPos(x)
@@ -29,8 +29,7 @@ def on_press(key):
         i = 2
     elif key.char == 'd':
         i = 3
-    click(secmonitor[i], True)
-
+    click(firmonitor[i], True)
 
 def on_release(key):
     click(pyautogui.position(), False)
